@@ -1,5 +1,5 @@
 // Functions to manage contacts for contacts application
-// Austin Ayers Edited 09/16/22
+// Austin Ayers Edited 09/19/22
 
 #include <iostream>
 #include <vector>
@@ -21,4 +21,15 @@ void remove_contact(std::string aFirst_name, std::string aLast_name, std::string
             // erase contact from vector
             aVector.erase(aVector.begin() + i);
     }
+}
+std::string find_contact(std::string aName, std::vector<std::string> &aVector) {
+    // find matching contacts by name and return them as a string
+    std::string matches;
+
+    for(int i=0; i<aVector.size(); i++) {
+        if(aName == aVector[i].substr(0, aName.length()))
+            // names are equal, add to return value
+            matches.append('\n' + aVector[i]);
+    }
+    return matches;
 }
