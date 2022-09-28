@@ -1,11 +1,11 @@
 // Functions to load contacts from my-contacts.txt
-// Austin Ayers Edited 9/16/22
+// Austin Ayers Edited 9/27/22
 
 #include <fstream>
 #include <vector>
 #include "contacts.h"
 
-bool file_exists(std::string aFile){
+bool file_exists(const std::string& aFile){
     // return true if file exists
     std::fstream save_file;
     save_file.open(aFile);
@@ -17,7 +17,7 @@ bool file_exists(std::string aFile){
         return false;
 }
 
-void create_file(std::string aFile) {
+void create_file(const std::string& aFile) {
     // create file [aName].txt in current working directory
     std::ofstream new_file;
     new_file.open(aFile);

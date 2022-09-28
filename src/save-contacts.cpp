@@ -1,5 +1,5 @@
 // Functions for saving contacts to save file for use in Contacts application.
-// Austin Ayers Edited 09/16/22
+// Austin Ayers Edited 09/27/22
 
 #include <iostream>
 #include <vector>
@@ -11,7 +11,7 @@ void save_contacts(std::vector<std::string> &aVector){
     std::ofstream save_file("my-contacts.txt", std::ofstream::trunc);
 
     for(int i=0; i<aVector.size(); i++){
-        if(aVector[i] != "")
+        if(!aVector[i].empty())
             save_file << aVector[i] + '\n';
     }
     save_file.close();

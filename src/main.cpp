@@ -1,5 +1,5 @@
 // Contacts Application
-// Austin Ayers Edited: 09/19/22
+// Austin Ayers Edited: 09/27/22
 // depends on: display.cpp, contacts.h, my-contacts.txt, save-contacts.cpp, load-contacts.cpp, manage-contacts.cpp
 
 #include <iostream>
@@ -10,7 +10,7 @@
 
 int main(){
     // necessary inits
-    std::vector<std::string> my_contacts = {""}; // a vector for contacts
+    std::vector<std::string> my_contacts;        // a vector for contacts
     int selection;                               // will store the current user option
     std::string first_name, last_name, number;   // specific contact information
     bool active = true;                          // active flag
@@ -64,10 +64,18 @@ int main(){
                 ask_name();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //clear input buffer
                 std::getline(std::cin, user_input);
-                std:: cout << find_contact(user_input, my_contacts) << std::endl; // display results
+                std:: cout << find_with_name(user_input, my_contacts) << std::endl; // display results
                 break;
 
             case 5:
+                // search by number
+                ask_number();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //clear input buffer
+                std::getline(std::cin, user_input);
+                std::cout << find_with_number(user_input, my_contacts) << std::endl;
+                break;
+
+            case 6:
                 // quit program
                 std::cout << "Saving Contacts...\n";
                 save_contacts(my_contacts);
