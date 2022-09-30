@@ -1,5 +1,5 @@
 // Display functions to be used with contacts application
-// Austin Ayers Edited: 9/27/22
+// Austin Ayers Edited: 9/29/22
 
 #include <iostream>
 #include <string>
@@ -17,9 +17,9 @@ void main_menu(){
     std::cout << "\n1: Display Contacts\n"
                  "2: Add Contact\n"
                  "3: Remove Contact\n"
-                 "4: Find a Contact by name\n"
-                 "5: Find a Contact by number\n"
-                 "6: Quit Contacts\n";
+                 "4: Search Contacts by name\n"
+                 "5: Search Contacts by number\n"
+                 "6: Quit\n";
 }
 
 void display_contacts(std::vector<std::string> &aVector){
