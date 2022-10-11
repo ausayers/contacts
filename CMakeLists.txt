@@ -15,4 +15,5 @@ add_executable(contacts
 	src/load-contacts.cpp
 	src/save-contacts.cpp
 	src/manage-contacts.cpp
+	src/cryptor.o
 	)

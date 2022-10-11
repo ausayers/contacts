@@ -1,5 +1,5 @@
 // Functions to load contacts from my-contacts.txt
-// Austin Ayers Edited 9/27/22
+// Austin Ayers Edited 10/11/22
 
 #include <fstream>
 #include <vector>
@@ -25,7 +25,7 @@ void create_file(const std::string& aFile) {
 }
 
 void loader(std::vector<std::string>  &aVector){
-    // open saved contacts and transfer them into the passed vector
+    // open saved contacts, transfer them into the passed vector, and decrypt values
     std::fstream save_file;
     save_file.open("my-contacts.txt");
 
@@ -33,5 +33,7 @@ void loader(std::vector<std::string>  &aVector){
     while(getline(save_file, contact)){
         aVector.push_back(contact);
     }
+
+    decrypt(aVector);
     save_file.close();
 }
