@@ -25,6 +25,7 @@ void add_contact(const std::string& aFirst_name, const std::string& aLast_name, 
 void remove_contact(const std::string& aFirst_name, const std::string& aLast_name, const std::string& aNumber,std::vector<std::string> &aVector);
 std::string find_with_name(const std::string& aName, std::vector<std::string> &aVector);
 std::string find_with_number(const std::string& aNumber, std::vector<std::string> &aVector);
+std::string toggle_encryption(std::vector<std::string> &aVector);
 
 // from cryptor.cpp
 void encrypt(std::vector <std::string>& some_contacts);

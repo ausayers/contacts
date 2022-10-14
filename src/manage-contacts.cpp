@@ -45,3 +45,15 @@ std::string find_with_number(const std::string& aNumber, std::vector<std::string
     }
     return matches;
 }
+
+std::string toggle_encryption(std::vector<std::string> &aVector){
+    // change encryption flag (the first item in the vector) and return a description of behavior
+    if(aVector[0] == "file encryption: false"){
+        aVector[0] = "file encryption: true";
+        return "\nFile Encrypion Enabled...\n";
+    }
+    else {
+        aVector[0] = "file encryption: false";
+        return "\nFile Encrypion Disabled...\n";
+    }
+}

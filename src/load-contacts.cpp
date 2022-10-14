@@ -34,6 +34,9 @@ void loader(std::vector<std::string>  &aVector){
         aVector.push_back(contact);
     }
 
-    decrypt(aVector);
+    // check encrypt flag and decrypt if != "false"
+    if(aVector[0] != "file encryption: false")
+        decrypt(aVector);
+    
     save_file.close();
 }

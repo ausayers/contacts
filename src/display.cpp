@@ -19,13 +19,14 @@ void main_menu(){
                  "3: Remove Contact\n"
                  "4: Search Contacts by name\n"
                  "5: Search Contacts by number\n"
-                 "6: Quit\n";
+                 "6: Toggle File Encryption\n"
+                 "7: Quit\n";
 }
 
 void display_contacts(std::vector<std::string> &aVector){
-    // display all contacts in the contacts vector
+    // display all contacts (except item 0: the entrypt flag) in the contacts vector
     std::cout << "\nSaved Contacts: \n";
-    for(int x=0; x < aVector.size(); x++){
+    for(int x=1; x < aVector.size(); x++){
         if(!aVector[x].empty())
             std::cout << aVector[x] << '\n';
     }

@@ -10,7 +10,9 @@ void save_contacts(std::vector<std::string> &aVector){
     // encrypt contacts and overwrite save file with updated data
     std::ofstream save_file("my-contacts.txt", std::ofstream::trunc);
 
-    encrypt(aVector);
+    // check encrypt flag and encrypt if set to true
+    if(aVector[0] == "file encryption: true")
+        encrypt(aVector);
     
     for(int i=0; i<aVector.size(); i++){
         if(!aVector[i].empty())

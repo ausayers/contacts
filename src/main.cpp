@@ -26,6 +26,9 @@ int main(){
     } else {
         // file doesn't exist so create file
         std::cout << "Creating a save file 'my-contacts.txt'\n";
+
+        // add encryption flag as first item (enable by default)
+        my_contacts.push_back("file encryption: true");
         create_file("my-contacts.txt");
     }
 
@@ -76,6 +79,11 @@ int main(){
                 break;
 
             case 6:
+                // toggle encryption
+                std::cout << toggle_encryption(my_contacts);
+                break;
+
+            case 7:
                 // quit program
                 std::cout << "Saving Contacts...\n";
                 save_contacts(my_contacts);
